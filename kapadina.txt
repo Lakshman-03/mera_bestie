@@ -1,0 +1,14 @@
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Lakshman-03/mera_bestie.git
+git push -u origin main
+
+
+
+git checkout gh-pages
+git pull origin gh-pages
+git checkout main
+vite build --base=/mera_bestie/
+npm run deploy
