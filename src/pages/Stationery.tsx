@@ -25,7 +25,12 @@ const Stationery = () => {
       <h1 className="text-3xl font-bold mb-8">Stationery Collection</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {StationeryProducts.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div key={product.id} className=" bg-opacity-80 dark:bg-opacity-20 backdrop-blur-sm
+      rounded-2xl
+      shadow-lg transition-transform hover:scale-105
+      border border-gray-200/20 dark:border-gray-700/20
+      bg-gradient-to-br from-white/50 to-transparent
+      dark:from-gray-800/50 dark:to-transparent rounded-lg shadow-md overflow-hidden">
             <img
               src={product.image}
               alt={product.name}

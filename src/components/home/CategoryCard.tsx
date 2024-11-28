@@ -22,15 +22,35 @@ const CategoryCard = ({
   buttonText
 }: CategoryCardProps) => {
   return (
-    <div className={`${bgColor} rounded-2xl p-8 shadow-lg transition-transform hover:scale-105`}>
-      <div className={`${color} w-12 h-12 rounded-full flex items-center justify-center mb-6`}>
-        <Icon className="w-6 h-6" />
+    <div className={`
+      ${bgColor} bg-opacity-100 dark:bg-opacity-20 backdrop-blur-sm
+      rounded-2xl p-8 
+      shadow-lg transition-shadow hover:scale-105
+      border border-gray-200/20 dark:border-gray-700/20
+      bg-gradient-to-br from-purple-100 to-pink-100
+      dark:from-gray-800/50 dark:to-transparent
+    `}>
+      <div className={`
+        ${color} bg-opacity-90 dark:bg-opacity-30 
+        w-12 h-12 rounded-full 
+        flex items-center justify-center mb-6
+      `}>
+        <Icon className="w-6 h-6 dark:text-gray-200" />
       </div>
-      <h3 className="text-2xl font-bold mb-4">{title}</h3>
-      <p className="text-gray-600 mb-8">{description}</p>
+      <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        {title}
+      </h3>
+      <p className="text-gray-600 dark:text-gray-400 mb-8">
+        {description}
+      </p>
       <Link
         to={link}
-        className="inline-flex items-center justify-center w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors"
+        className="inline-flex items-center justify-center w-full 
+          bg-black/90 dark:bg-white/10 
+          text-white dark:text-gray-100 
+          py-3 px-6 rounded-lg 
+          hover:bg-gray-800 dark:hover:bg-white/20 
+          transition-colors"
       >
         {buttonText}
         <svg
