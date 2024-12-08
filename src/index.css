@@ -57,3 +57,44 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-md;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add modern button hover effect */
+.modern-button {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.modern-button::after {
+  content: '';
+  @apply absolute inset-0 bg-white/20 transform scale-x-0 origin-left transition-transform duration-300;
+}
+
+.modern-button:hover::after {
+  @apply scale-x-100;
+}

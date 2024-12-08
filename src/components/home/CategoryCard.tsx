@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LucideIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface CategoryCardProps {
   title: string;
@@ -22,14 +23,21 @@ const CategoryCard = ({
   buttonText
 }: CategoryCardProps) => {
   return (
-    <div className={`
-      ${bgColor} bg-opacity-100 dark:bg-opacity-20 backdrop-blur-sm
-      rounded-2xl p-8 
-      shadow-lg transition-shadow hover:scale-105
-      border border-gray-200/20 dark:border-gray-700/20
-      bg-gradient-to-br from-purple-100 to-pink-100
-      dark:from-gray-800/50 dark:to-transparent
-    `}>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className={`
+        ${bgColor} bg-opacity-100 dark:bg-opacity-20 
+        backdrop-blur-sm rounded-2xl p-8 
+        shadow-lg hover:shadow-xl
+        border border-gray-200/20 dark:border-gray-700/20
+        bg-gradient-to-br from-purple-100 to-pink-100
+        dark:from-gray-800/50 dark:to-transparent
+      `}
+    >
       <div className={`
         ${color} bg-opacity-90 dark:bg-opacity-30 
         w-12 h-12 rounded-full 
@@ -67,7 +75,7 @@ const CategoryCard = ({
           />
         </svg>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
